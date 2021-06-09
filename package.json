@@ -8,7 +8,7 @@
     "start": "nodemon ."
   },
   "author": "Antaresque",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
