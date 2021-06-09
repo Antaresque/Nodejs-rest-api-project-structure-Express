@@ -1,6 +1,5 @@
 node_modules
 private.key
-public.key
 secret.json
 logs
 dev.env
