@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const logger = require('./utils/logger');
 
 module.exports = async () => {
     const database = process.env.DATABASE
@@ -15,11 +16,11 @@ module.exports = async () => {
         });
 
         //require('../mock').loadData();
-        console.info('Connected to database');
+        logger.info('Connected to database');
     }
     catch(err) {
-        console.info("MongoDB connection error, shutting down...");
-        console.info(err.name, err.message);
+        logger.info("MongoDB connection error, shutting down...");
+        logger.info(err.name, err.message);
         process.exit();
     }
 }

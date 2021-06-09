@@ -8,6 +8,7 @@ const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrHandler = require('./middleware/errorHandler');
+const httpLogger = require('./middleware/loggerMiddleware');
 
 const bookRoutes = require('./routes/bookRoutes');
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(mongoSanitize());                   // Data sanitization against NoSQL query injection
 app.use(xss());                             // Data sanitization against XSS
 app.use(hpp());                             // Prevent parameter pollution attack
+app.use(httpLogger);
 
 // ROUTES
 app.use('/api/v1/books', bookRoutes);

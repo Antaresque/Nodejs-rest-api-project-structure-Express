@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const logger = require('../utils/logger');
 
 const schema = new mongoose.Schema({
     title: {
@@ -34,7 +35,7 @@ schema.pre("save", async (next) => {
     // adding the field
     this.newField = true;
 
-    console.log("Saving the document...");
+    logger.info("Saving the document...");
     next();
 });
 
